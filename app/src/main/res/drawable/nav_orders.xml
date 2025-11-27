@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected -->
+    <item android:drawable="@drawable/selected_ic_orders" android:state_checked="true"/>
+    <!-- Unselected -->
+    <item android:drawable="@drawable/unselected_ic_orders"/>
+</selector>

@@ -1,0 +1,607 @@
+{
+  "restaurant": [
+    {
+      "restaurantName": "Pizza Planet",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/02/10/13/35/hotel-1191718_1280.jpg",
+      "restaurantStar": "4.5",
+      "restaurantAddress": "Near Race Course, Surat",
+      "restaurantNear": "2 Km",
+      "restaurantType": "Italian, Fast Food",
+      "restaurantFoodType": ["Veg"],
+      "restaurantRated": "2",
+      "restaurantDescription": "Known for cheesy pizzas, garlic breads & chilled beverages. Perfect for quick bites and family meals.",
+      "food": [
+        {
+          "foodName": "Smoky Veggie Wood-Fire",
+          "foodType": ["Veg"],
+          "foodDescription": "Bell peppers, onions, olives, mushrooms with a rich wood-fire smoky flavor.",
+          "foodStar": "4.5",
+          "foodCategories": "Pizza",
+          "foodPrice": "299",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/07/19/16/04/pizza-6478478_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Recommended", "Cheese Burst", "Bestseller"]
+        },
+        {
+          "foodName": "Classic Veggie Burger",
+          "foodType": ["Veg"],
+          "foodDescription": "Crispy veg patty with lettuce, tomato, and creamy mayo.",
+          "foodStar": "4.4",
+          "foodCategories": "Burger",
+          "foodPrice": "129",
+          "foodImage": "https://cdn.pixabay.com/photo/2022/07/15/18/17/spicy-burger-7323694_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Spicy"]
+        },
+            {
+          "foodName": "Veg Sandwich",
+          "foodType": ["Veg"],
+          "foodDescription": "Fresh cucumber, tomato, onion, and butter with light seasoning in soft bread.",
+          "foodStar": "4.4",
+          "foodCategories": "Sandwich",
+          "foodPrice": "80",
+          "foodImage": "https://cdn.pixabay.com/photo/2017/05/31/02/56/food-photography-2358904_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Spicy"]
+        },
+         {
+          "foodName": "Veg Hakka Noodles",
+          "foodType": ["Veg"],
+          "foodDescription": "Stir-fried noodles tossed with veggies, soy sauce, and aromatic spices.",
+          "foodStar": "4.6",
+          "foodCategories": "Sandwich",
+          "foodPrice": "149",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/12/29/23/39/spicy-noodle-6902956_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Spicy"]
+        },
+         {
+          "foodName": "Classic Chocolate Shake",
+          "foodType": ["Veg"],
+          "foodDescription": "Rich cocoa blended with thick milk and topped with whipped cream.",
+          "foodStar": "4.6",
+          "foodCategories": "Shake",
+          "foodPrice": "210",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/01/06/10/11/coffee-5893926_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Cream"]
+        },
+         {
+          "foodName": "Chocolate Truffle Cake",
+          "foodType": ["Veg"],
+          "foodDescription": "Rich chocolate sponge layered with smooth truffle ganache.",
+          "foodStar": "4.7",
+          "foodCategories": "Shake",
+          "foodPrice": "499",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/03/05/08/23/chocolate-4903767_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Cream"]
+        },
+              {
+          "foodName": "Cold Coffee Frappe Shake",
+          "foodType": ["Veg"],
+          "foodDescription": "Strong cold coffee blended with ice cream for a rich café-style taste.",
+          "foodStar": "4.5",
+          "foodCategories": "Shake",
+          "foodPrice": "159",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/12/17/09/13/iced-coffee-6876063_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Cream"]
+        },
+         {
+          "foodName": "Classic Garden Green Salad",
+          "foodType": ["Veg"],
+          "foodDescription": "Fresh lettuce, cucumber, tomato, and carrots tossed with light vinaigrette.",
+          "foodStar": "4.0",
+          "foodCategories": "Salad",
+          "foodPrice": "129",
+          "foodImage": "https://cdn.pixabay.com/photo/2015/05/31/13/59/salad-791891_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Cream"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Spice Grill Non-Veg House",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/08/21/14/49/cafe-1609795_1280.jpg",
+      "restaurantStar": "4.6",
+      "restaurantAddress": "Prahladnagar, Surat",
+      "restaurantNear": "1.9 Km",
+      "restaurantType": "North Indian, Tandoor",
+      "restaurantFoodType": ["Non Veg"],
+      "restaurantRated": "2",
+      "restaurantDescription": "Aromatic dum biryanis & rich curries made fresh.",
+      "food": [
+        {
+          "foodName": "Margherita Classic",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Fresh mozzarella, basil leaves, and rich tomato sauce on a thin crust.",
+          "foodStar": "4.6",
+          "foodCategories": "Pizza",
+          "foodPrice": "299",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/08/19/14/43/pizza-5501065_1280.jpg",
+          "cuisine": "Hyderabadi",
+          "tags": ["Top Rated", "Bestseller"]
+        },
+        {
+          "foodName": "Paneer Tikka Burger",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Grilled paneer tikka, mint mayo, onions, and capsicum.",
+          "foodStar": "4.7",
+          "foodCategories": "Biryani",
+          "foodPrice": "159",
+          "foodImage": "https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_1280.jpg",
+          "cuisine": "North Indian",
+          "tags": ["Veg"]
+        },
+        {
+          "foodName": "Avocado Sandwich",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Creamy mashed avocado mixed with tomatoes, onions, and herbs layered between soft bread.",
+          "foodStar": "4.0",
+          "foodCategories": "Sandwich",
+          "foodPrice": "170",
+          "foodImage": "https://cdn.pixabay.com/photo/2022/02/12/21/22/toast-7009956_960_720.jpg",
+          "cuisine": "North Indian",
+          "tags": ["Veg"]
+        },
+              {
+          "foodName": "Manchurian Gravy",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Crispy vegetable balls tossed in spicy Manchurian sauce.",
+          "foodStar": "4.9",
+          "foodCategories": "Chinese",
+          "foodPrice": "169",
+          "foodImage": "https://img.freepik.com/free-photo/meatballs-sweet-sour-tomato-sauce_2829-19545.jpg",
+          "cuisine": "North Indian",
+          "tags": ["Veg"]
+        },
+                      {
+          "foodName": "Greek Non Veggie Salad",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Cucumber, tomatoes, olives, onions, and feta with olive oil dressing.",
+          "foodStar": "5.0",
+          "foodCategories": "Salad",
+          "foodPrice": "249",
+          "foodImage": "https://cdn.pixabay.com/photo/2014/12/28/13/18/feta-cheese-581848_1280.jpg",
+          "cuisine": "North Indian",
+          "tags": ["Veg"]
+        },
+                      {
+          "foodName": "Pasta Salad",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Boiled pasta, veggies, olives, and creamy mayo dressing.",
+          "foodStar": "4.8",
+          "foodCategories": "Salad",
+          "foodPrice": "249",
+          "foodImage": "Boiled pasta, veggies, olives, and creamy mayo dressing.",
+          "cuisine": "North Indian",
+          "tags": ["Veg"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Tulsi Leaf Dining",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/08/21/14/49/cafe-1609795_1280.jpg",
+      "restaurantStar": "4.3",
+      "restaurantAddress": "Satellite Road, Surat",
+      "restaurantNear": "2.4 Km",
+      "restaurantType": "Multi-Cuisine",
+      "restaurantFoodType": ["Veg", "Non Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Gourmet burgers, loaded fries & thick shakes.",
+      "food": [
+        {
+          "foodName": "Farmhouse Delight",
+          "foodType": ["Veg"],
+          "foodDescription": "Mushrooms, onions, capsicum, and fresh tomatoes on a cheesy base.",
+          "foodStar": "4.5",
+          "foodCategories": "Pizza",
+          "foodPrice": "179",
+          "foodImage": "https://cdn.pixabay.com/photo/2018/03/15/07/05/refreshment-3227297_1280.jpg",
+          "cuisine": "American",
+          "tags": ["Recommended"]
+        },
+        {
+          "foodName": "Spicy Mexican Veg Burger",
+          "foodType": ["Veg"],
+          "foodDescription": "Spicy bean patty with jalapeños, salsa, and chipotle mayo.",
+          "foodStar": "4.6",
+          "foodCategories": "Burger",
+          "foodPrice": "169",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/10/22/11/36/hamburger-5675844_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Veg Club Sandwich",
+          "foodType": ["Veg"],
+          "foodDescription": "Triple-layer sandwich with veggies, cheese, mayo, and tangy sauce.",
+          "foodStar": "4.6",
+          "foodCategories": "Sandwich",
+          "foodPrice": "210",
+          "foodImage": "https://cdn.pixabay.com/photo/2015/10/13/21/05/sandwich-986784_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Schezwan Fried Rice",
+          "foodType": ["Veg"],
+          "foodDescription": "Triple-layer sandwich with veggies, cheese, mayo, and tangy sauce.",
+          "foodStar": "4.5",
+          "foodCategories": "Chinese",
+          "foodPrice": "159",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/05/31/01/10/fried-rice-6297406_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Strawberry Bliss Shake",
+          "foodType": ["Veg"],
+          "foodDescription": "Fresh strawberries blended into a creamy, refreshing shake.",
+          "foodStar": "4.2",
+          "foodCategories": "Shake",
+          "foodPrice": "150",
+          "foodImage": "https://cdn.pixabay.com/photo/2023/05/31/11/14/smoothie-8031132_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Red Velvet Cream Cheese Cake",
+          "foodType": ["Veg"],
+          "foodDescription": "Soft red velvet layers filled with tangy cream cheese frosting.",
+          "foodStar": "4.2",
+          "foodCategories": "Cake",
+          "foodPrice": "549",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/03/10/03/49/red-velvet-cake-4917734_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Blueberry Cheesecake",
+          "foodType": ["Veg"],
+          "foodDescription": "Creamy cheesecake topped with fresh blueberry compote.",
+          "foodStar": "4.5",
+          "foodCategories": "Cake",
+          "foodPrice": "489",
+          "foodImage": "https://cdn.pixabay.com/photo/2017/11/11/20/33/food-2940376_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        },
+        {
+          "foodName": "Greek Veggie Salad",
+          "foodType": ["Veg"],
+          "foodDescription": "Soft red velvet layers filled with tangy cream cheese frosting.",
+          "foodStar": "5.0",
+          "foodCategories": "Salad",
+          "foodPrice": "279",
+          "foodImage": "https://cdn.pixabay.com/photo/2014/12/28/13/18/feta-cheese-581848_1280.jpg",
+          "cuisine": "American",
+          "tags": []
+        }
+      ]
+    },
+    {
+      "restaurantName": "Urban Tiffin Veg Cafe",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/11/18/22/21/restaurant-1837150_1280.jpg",
+      "restaurantStar": "4.5",
+      "restaurantAddress": "Sindhu Bhavan Road, Surat",
+      "restaurantNear": "3.2 Km",
+      "restaurantType": "Cafe & Snacks, Beverages",
+      "restaurantFoodType": ["Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Fresh, wholesome bowls, cold-pressed juices and light bites for a clean, tasty meal.",
+      "food": [
+        {
+          "foodName": "Spicy Peri-Peri Paneer",
+          "foodType": ["Veg"],
+          "foodDescription": "Soft paneer cubes tossed in peri-peri seasoning with onions & capsicum..",
+          "foodStar": "4.5",
+          "foodCategories": "Pizza",
+          "foodPrice": "449",
+          "foodImage": "https://cdn.pixabay.com/photo/2017/07/22/22/57/pizza-2530169_1280.jpg",
+          "cuisine": "Mediterranean",
+          "tags": ["Healthy", "High Protein"]
+        },
+        {
+          "foodName": "Mushroom Melt Burger",
+          "foodType": ["Veg"],
+          "foodDescription": "Creamy sauteed mushrooms with cheesy veg patty.",
+          "foodStar": "4.2",
+          "foodCategories": "Burger",
+          "foodPrice": "179",
+          "foodImage": "https://cdn.pixabay.com/photo/2022/05/12/17/05/hamburger-7191897_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Light", "Chef’s Choice"]
+        },
+             {
+          "foodName": "Cheese Chutney Sandwich",
+          "foodType": ["Veg"],
+          "foodDescription": "Loaded cheese with tangy green chutney and veggies.",
+          "foodStar": "4.2",
+          "foodCategories": "Sandwich",
+          "foodPrice": "150",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/10/02/14/46/food-6675429_1280.jpg",
+          "cuisine": "Italian",
+          "tags": ["Light", "Chef’s Choice"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Urban Flame BBQ",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2015/02/24/11/54/vienna-647328_1280.jpg",
+      "restaurantStar": "4.3",
+      "restaurantAddress": "SG Highway, Surat",
+      "restaurantNear": "2.3 Km",
+      "restaurantType": "Non-Veg, BBQ, Grill",
+      "restaurantFoodType": ["Non Veg"],
+      "restaurantRated": "2",
+      "restaurantDescription": "Charcoal grills, rich curries, and tandoor specials—perfect for meat lovers.",
+      "food": [
+        {
+          "foodName": "Chilli Paneer",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Paneer cubes wok-tossed with capsicum, onion, and spicy chilli sauce.",
+          "foodStar": "4.0",
+          "foodCategories": "Chinese",
+          "foodPrice": "199",
+          "foodImage": "https://img.freepik.com/free-photo/fried-eggplants-potatoes-with-chili-sauce_141793-1658.jpg",
+          "cuisine": "North Indian",
+          "tags": ["Bestseller", "Juicy"]
+        },
+        {
+          "foodName": "Mutton Power Salad",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Avocado, greens, cherry tomatoes, corn, and lemon-pepper dressing.",
+          "foodStar": "4.5",
+          "foodCategories": "Salad",
+          "foodPrice": "459",
+          "foodImage": "https://cdn.pixabay.com/photo/2018/11/03/07/07/food-3791530_1280.jpg",
+          "cuisine": "Kashmiri",
+          "tags": ["Rich", "Traditional"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Green Bowl Veg Kitchen",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/02/10/13/39/hotel-1191725_1280.jpg",
+      "restaurantStar": "4.2",
+      "restaurantAddress": "12 Sunrise Plaza, Near Nehru Circle",
+      "restaurantNear": "3 Km",
+      "restaurantType": "Chinese, Asian",
+      "restaurantFoodType": ["Veg", "Non Veg"],
+      "restaurantRated": "2",
+      "restaurantDescription": "Delicious Chinese and Asian street-style food.",
+      "food": [
+        {
+          "foodName": "Mexican Fiesta",
+          "foodType": ["Veg"],
+          "foodDescription": "alapenos, corn, onions, Mexican herbs",
+          "foodStar": "4.8",
+          "foodCategories": "Pizza",
+          "foodPrice": "199",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/04/01/16/34/pepperoni-4991789_960_720.jpg",
+          "cuisine": "Chinese",
+          "tags": ["Spicy", "Street Food"]
+        },
+        {
+          "foodName": "Oreo Crunch Shake",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Crushed Oreo cookies mixed with chocolate and vanilla ice cream.",
+          "foodStar": "4.5",
+          "foodCategories": "Shake",
+          "foodPrice": "299",
+          "foodImage": "Crushed Oreo cookies mixed with chocolate and vanilla ice cream.",
+          "cuisine": "Chinese",
+          "tags": ["Popular"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Annapoorna Spice House",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2021/07/20/06/04/restaurant-6479818_1280.jpg",
+      "restaurantStar": "4.8",
+      "restaurantAddress": "CG Road, Surat",
+      "restaurantNear": "4 Km",
+      "restaurantType": "South Indian",
+      "restaurantFoodType": ["Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Authentic South Indian dosas & idlis served fresh.",
+      "food": [
+        {
+          "foodName": "Wood-Fire Margherita",
+          "foodType": ["Veg"],
+          "foodDescription": "Onions, capsicum, jalapeno & spicy sauce",
+          "foodStar": "4.0",
+          "foodCategories": "Pizza",
+          "foodPrice": "559",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/12/07/14/32/italian-cuisine-6853411_1280.jpg",
+          "cuisine": "South Indian",
+          "tags": ["Crispy"]
+        },
+        {
+          "foodName": "Street-Style Burger",
+          "foodType": ["Veg"],
+          "foodDescription": "Crispy aloo tikki, chutney, onion, and masala spices.",
+          "foodStar": "4.0",
+          "foodCategories": "Burger",
+          "foodPrice": "110",
+          "foodImage": "Burger",
+          "cuisine": "South Indian",
+          "tags": ["Healthy"]
+        },
+        {
+          "foodName": "KitKat Crunch Shake",
+          "foodType": ["Veg"],
+          "foodDescription": "KitKat chunks blended with chocolate ice cream and milk.",
+          "foodStar": "4.5",
+          "foodCategories": "Shake",
+          "foodPrice": "169",
+          "foodImage": "Burger",
+          "cuisine": "South Indian",
+          "tags": ["Healthy"]
+        },
+        {
+          "foodName": "Black Forest Pastry",
+          "foodType": ["Veg"],
+          "foodDescription": "Chocolate sponge with whipped cream, cherries, and chocolate shavings.",
+          "foodStar": "4.0",
+          "foodCategories": "Cake",
+          "foodPrice": "99",
+          "foodImage": "https://cdn.pixabay.com/photo/2016/11/22/18/52/cake-1850011_1280.jpg",
+          "cuisine": "South Indian",
+          "tags": ["Healthy"]
+        },
+        {
+          "foodName": "Fresh Fruit Gateau Cake",
+          "foodType": ["Veg"],
+          "foodDescription": "Soft vanilla sponge layered with cream and seasonal fresh fruits.",
+          "foodStar": "4.0",
+          "foodCategories": "Cake",
+          "foodPrice": "599",
+          "foodImage": "https://cdn.pixabay.com/photo/2016/11/22/18/52/cake-1850011_1280.jpg",
+          "cuisine": "South Indian",
+          "tags": ["Healthy"]
+        },
+        {
+          "foodName": "Pineapple Cream Pastry",
+          "foodType": ["Veg"],
+          "foodDescription": "Fluffy vanilla sponge with pineapple crush and whipped cream.",
+          "foodStar": "4.8",
+          "foodCategories": "Cake",
+          "foodPrice": "99",
+          "foodImage": "https://cdn.pixabay.com/photo/2018/07/09/13/45/cake-3526176_1280.jpg",
+          "cuisine": "South Indian",
+          "tags": ["Healthy"]
+        }
+      ]
+    },
+    {
+      "restaurantName": "Night Owl Cafe",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/11/18/22/56/chairs-1837293_1280.jpg",
+      "restaurantStar": "4.5",
+      "restaurantAddress": "Sindhu Bhavan Road, Surat",
+      "restaurantNear": "1.5 Km",
+      "restaurantType": "Cafe, Desserts",
+      "restaurantFoodType": ["Non Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Trendy café with coffees, shakes & desserts.",
+      "food": [
+        {
+          "foodName": "Mexican Fiesta",
+          "foodType": ["Non Veg"],
+          "foodDescription": "alapenos, corn, onions, Mexican herbs",
+          "foodStar": "4.7",
+          "foodCategories": "Pizza",
+          "foodPrice": "150",
+          "foodImage": "https://cdn.pixabay.com/photo/2020/04/01/16/34/pepperoni-4991789_960_720.jpg",
+          "cuisine": "Cafe",
+          "tags": ["Hot", "Classic"]
+        },
+        {
+          "foodName": "Cheesy Blast Veg Burger",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Juicy veg patty loaded with melted cheese and special sauce.",
+          "foodStar": "4.8",
+          "foodCategories": "Burger",
+          "foodPrice": "220",
+          "foodImage": "https://cdn.pixabay.com/photo/2022/07/15/18/12/cheese-burger-7323672_1280.jpg",
+          "cuisine": "Desserts",
+          "tags": ["Sweet", "Bestseller"]
+        }
+      ]
+    },
+     {
+      "restaurantName": "Royal Biryani Corner",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2016/11/18/22/56/chairs-1837293_1280.jpg",
+      "restaurantStar": "4.2",
+      "restaurantAddress": "Maninagar, Surat",
+      "restaurantNear": "3.1 Km",
+      "restaurantType": "Cafe, Desserts",
+      "restaurantFoodType": ["Non Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Trendy café with coffees, shakes & desserts.",
+      "food": [
+        {
+          "foodName": "Classic Grilled Sandwich",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Loaded cheese with tangy green chutney and veggies.",
+          "foodStar": "4.0",
+          "foodCategories": "Sandwich",
+          "foodPrice": "150",
+          "foodImage": "https://cdn.pixabay.com/photo/2016/11/29/04/00/bread-1867208_1280.jpg",
+          "cuisine": "Cafe",
+          "tags": ["Hot", "Classic"]
+        },
+        {
+          "foodName": "Corn & Cheese Sandwich",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Sweet corn mixed with creamy cheese and herbs.",
+          "foodStar": "4.8",
+          "foodCategories": "Sandwich",
+          "foodPrice": "220",
+          "foodImage": "https://cdn.pixabay.com/photo/2019/07/04/10/46/egg-4316338_960_720.jpg",
+          "cuisine": "Desserts",
+          "tags": ["Sweet", "Bestseller"]
+        },
+        {
+          "foodName": "Sprouts Protein Salad",
+          "foodType": ["Non Veg"],
+          "foodDescription": "Healthy green gram sprouts with onion, tomato, lemon, and spices.",
+          "foodStar": "4.8",
+          "foodCategories": "Salad",
+          "foodPrice": "220",
+          "foodImage": "Salad",
+          "cuisine": "Desserts",
+          "tags": ["Sweet", "Bestseller"]
+        }
+      ]
+    },
+     {
+      "restaurantName": "Coastal Curry Point",
+      "restaurantImage": "https://cdn.pixabay.com/photo/2019/12/15/08/17/cafe-4696555_1280.jpg",
+      "restaurantStar": "4.8",
+      "restaurantAddress": "Navrangpura, Surat",
+      "restaurantNear": "2.6 Km",
+      "restaurantType": "Cafe, Desserts",
+      "restaurantFoodType": ["Non Veg"],
+      "restaurantRated": "1",
+      "restaurantDescription": "Trendy café with coffees, shakes & desserts.",
+      "food": [
+        {
+          "foodName": "Veg Spring Rolls",
+          "foodType": ["Veg"],
+          "foodDescription": "Crispy rolls stuffed with seasoned veggies and fried golden.",
+          "foodStar": "4.4",
+          "foodCategories": "Chinese",
+          "foodPrice": "150",
+          "foodImage": "Crispy rolls stuffed with seasoned veggies and fried golden.",
+          "cuisine": "Cafe",
+          "tags": ["Hot", "Classic"]
+        },
+        {
+          "foodName": "Chilli Garlic Noodles",
+          "foodType": ["Veg"],
+          "foodDescription": "Soft noodles stir-fried with garlic, chilli flakes, and mixed vegetables.",
+          "foodStar": "4.8",
+          "foodCategories": "Chinese",
+          "foodPrice": "220",
+          "foodImage": "https://cdn.pixabay.com/photo/2015/04/06/16/21/korean-food-709606_1280.jpg",
+          "cuisine": "Desserts",
+          "tags": ["Sweet", "Bestseller"]
+        },
+        {
+          "foodName": "Mango Delight Shake",
+          "foodType": ["Veg"],
+          "foodDescription": "Seasonal mangoes blended into a smooth, sweet tropical shake.",
+          "foodStar": "4.5",
+          "foodCategories": "Shake",
+          "foodPrice": "220",
+          "foodImage": "https://cdn.pixabay.com/photo/2021/04/16/16/21/mango-6183986_1280.jpg",
+          "cuisine": "Desserts",
+          "tags": ["Sweet", "Bestseller"]
+        }
+      ]
+    }
+  ]
+}

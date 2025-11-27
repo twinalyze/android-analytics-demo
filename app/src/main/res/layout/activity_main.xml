@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+   <!-- &lt;!&ndash; ViewPager2 for fragments &ndash;&gt;
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />-->
+
+    <!-- FrameLayout (Container for Fragments) -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom" />
+
+    <!-- Navigation container -->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation">
+
+        <!-- Indicator row -->
+        <LinearLayout
+            android:id="@+id/indicatorRow"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:weightSum="3"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/indicator_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/selected_color"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/indicator_orders"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/selected_color"
+                android:visibility="invisible" />
+
+            <View
+                android:id="@+id/indicator_profile"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:background="@color/selected_color"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- BottomNavigationView -->
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_10sdp"
+        android:background="@android:color/white"
+        app:menu="@menu/menu_bottom"
+        android:layout_alignParentBottom="true"
+        app:itemTextColor="@color/nav_item_colors"
+        app:itemTextAppearanceActive="@style/TextAppearance.BottomNav.Regular"
+        app:itemTextAppearanceInactive="@style/TextAppearance.BottomNav.Regular"/>-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/menu_bottom"
+        android:paddingVertical="@dimen/_5sdp"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/TextAppearance.BottomNav.Regular"
+        app:itemTextAppearanceInactive="@style/TextAppearance.BottomNav.Regular"/>
+
+</RelativeLayout>

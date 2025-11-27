@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/txtFoodName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1x Margherita Cheese Burst"
+        android:textSize="14sp"
+        android:layout_toStartOf="@+id/txtRs1"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/sf_pro_medium"
+        android:textColor="@color/text_color" />
+
+    <TextView
+        android:id="@+id/txtRs1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹"
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/txtPrice"
+        android:fontFamily="@font/sf_pro_semibold"
+        android:textColor="@color/text_color" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="299"
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/sf_pro_semibold"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:textColor="@color/text_color" />
+
+</RelativeLayout>
+

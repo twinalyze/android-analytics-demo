@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="title">Restaurants</item>
+        <item name="android:textColor">#0D0D0D</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/sf_pro_semibold</item>
+        <item name="fontFamily">@font/sf_pro_semibold</item> <!-- for newer API -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item> <!-- 👈 turns off CAPS -->
+        <item name="android:fontFamily">@font/sf_pro_medium</item> <!-- custom font -->
+        <item name="fontFamily">@font/sf_pro_medium</item> <!-- newer API -->
+    </style>
+
+    <style name="CustomAlertDialog" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+    <style name="TextAppearance.BottomNav.Regular" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/sf_pro_regular</item>  <!-- or your regular font -->
+        <!-- If your font file has weights, also force: -->
+<!--        <item name="android:textFontWeight">400</item>-->
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <!-- 50% corner size makes a perfect circle -->
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

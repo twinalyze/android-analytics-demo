@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity"
+    android:background="@drawable/start_img">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_text1"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_23sdp"
+            android:gravity="center"
+            android:fontFamily="@font/sf_pro_bold"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_text2"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:gravity="center"
+            android:fontFamily="@font/sf_pro_regular"
+            android:layout_marginTop="@dimen/_5sdp"/>
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@drawable/rounded_corner"
+            android:text="@string/get_started"
+            android:fontFamily="@font/sf_pro_medium"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

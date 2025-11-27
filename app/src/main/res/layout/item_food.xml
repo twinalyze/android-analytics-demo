@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:layout_marginHorizontal="5dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_btn_main"
+        android:gravity="center">
+
+        <!-- Food Image -->
+        <ImageView
+            android:id="@+id/imgFood"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_pizza_food" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imgFood">
+
+        <!-- Veg + Rating -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toEndOf="@id/imgFood"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="8dp">
+
+            <ImageView
+                android:id="@+id/imgVeg"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:src="@drawable/ic_veg"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/txtFoodType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Veg"
+                android:layout_toRightOf="@+id/imgVeg"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_pro_bold"
+                android:textSize="14sp"
+                android:textColor="#4CAF50"
+                android:drawablePadding="4dp"/>
+
+            <ImageView
+                android:id="@+id/imgStar"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_star"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/txtFoodRating"/>
+
+            <TextView
+                android:id="@+id/txtFoodRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5"
+                android:layout_alignParentEnd="true"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sf_pro_bold"
+                android:layout_marginStart="@dimen/_5sdp"
+
+                android:textColor="@color/text_color" />
+        </RelativeLayout>
+
+        <!-- Food Name -->
+        <TextView
+            android:id="@+id/txtFoodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cheese Burst Margherita"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/sf_pro_bold"
+            android:textColor="@color/text_color"
+            android:layout_below="@id/txtFoodType"
+            android:layout_toEndOf="@id/imgFood"
+            android:layout_marginStart="8dp"/>
+
+        <!-- Restaurant -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_below="@id/txtFoodName"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/txtFoodRestaurant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Burger Hub"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="12sp"
+                    android:textColor="#7A7A7A" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@id/txtFoodRestaurant"
+                android:layout_marginStart="8dp">
+                <!-- Price -->
+
+                <TextView
+                    android:id="@+id/txtPriceIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_color" />
+
+                <TextView
+                    android:id="@+id/txtFoodPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="299"
+                    android:layout_toRightOf="@+id/txtPriceIcon"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/sf_pro_bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_color"
+                    android:layout_marginStart="3dp"/>
+
+                <!-- Add Button -->
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:text="Add"
+                    android:fontFamily="@font/sf_pro_medium"
+                    android:textSize="14sp"
+                    android:textAllCaps="false"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_centerVertical="true"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

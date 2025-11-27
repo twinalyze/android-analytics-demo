@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_170sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    android:background="#F5F5F5"
+    android:backgroundTint="#F5F5F5"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F5F5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_restaurant"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingVertical="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtRestaurantName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Restaurant Name"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:textColor="@color/text_color"
+                android:layout_toStartOf="@+id/imgStar"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imgStar"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:src="@drawable/ic_star"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/txtRestaurantRating"/>
+
+            <TextView
+                android:id="@+id/txtRestaurantRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:text="4.5"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/sf_pro_semibold"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingVertical="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgLocation"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/ic_location_restaurants"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/txtRestaurantAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:layout_toRightOf="@id/imgLocation"
+                android:text="Near Race Course, Surat"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_pro_regular"
+                android:textColor="#7A7A7A" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingVertical="@dimen/_3sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtRestaurantType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Italian, Fast Food"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/sf_pro_regular"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="#E0E0E0"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/txtRestaurantType"
+                android:layout_marginHorizontal="10dp"/>
+
+            <TextView
+                android:id="@+id/txtRestaurantNear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_toRightOf="@+id/view"
+                android:fontFamily="@font/sf_pro_regular"
+                android:text="2 Km"
+                android:textColor="#7A7A7A"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

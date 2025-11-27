@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center">
+
+    <!-- Logout Icon -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_logout_new"
+        android:layout_gravity="center"
+         />
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout?"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:textColor="#0D0D0D"
+        android:fontFamily="@font/sf_pro_semibold"
+        android:gravity="center" />
+
+    <!-- Message -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to log out of your account?"
+        android:textSize="16sp"
+        android:textColor="@color/unselected_color"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:fontFamily="@font/sf_pro_regular" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- No Button -->
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="No"
+            android:textAllCaps="false"
+            android:textColor="#7A7A7A"
+            android:textSize="16sp"
+            android:fontFamily="@font/sf_pro_medium"
+            android:background="@drawable/bg_btn_gray" />
+
+        <!-- Yes Button -->
+        <Button
+            android:id="@+id/btnYes"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Yes"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:fontFamily="@font/sf_pro_medium"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_btn_orange" />
+    </LinearLayout>
+</LinearLayout>
