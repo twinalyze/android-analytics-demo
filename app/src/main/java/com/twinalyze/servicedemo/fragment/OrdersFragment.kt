@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.R
 
 class OrdersFragment : Fragment() {

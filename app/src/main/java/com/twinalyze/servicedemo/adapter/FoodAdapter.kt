@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.twinalyze.event.Analytics
 import com.twinalyze.servicedemo.R
-import com.twinalyze.servicedemo.model.Food
 import com.twinalyze.servicedemo.model.FoodItem
 import org.json.JSONObject
 
@@ -42,8 +41,6 @@ class FoodAdapter(private var foodList: List<FoodItem>, private val onAddClick: 
         holder.txtFoodRestaurant.text = food.foodDescription // or pass restaurant
         holder.txtFoodPrice.text = food.foodPrice
         holder.txtFoodRating.text = food.foodStar ?: "N/A"
-//        holder.txtFoodType.text = food.foodType.toString()
-//        holder.txtFoodType.text = food.foodType?.removeSurrounding("[", "]") ?: ""
         holder.txtFoodType.text = food.foodType?.joinToString(", ") ?: ""
 
         Log.d("foodType", "onBindViewHolder: "+food.foodType)
@@ -64,8 +61,6 @@ class FoodAdapter(private var foodList: List<FoodItem>, private val onAddClick: 
                 put("food", food.foodType)
                 put("foodPrice", food.foodPrice)           // Optional
 
-                // put("userId", "12345")
-                // put("paymentMethod", "Card")
             }
 
             Analytics.getInstance().setCustomEvent("AddToCart", eventProperties)

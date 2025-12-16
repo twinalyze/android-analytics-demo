@@ -28,10 +28,6 @@ class RestaurantAdapter (private var restaurants: List<RestaurantItem>,private v
         val view = LayoutInflater.from(parent.context)
             .inflate(layoutId, parent, false)
         return RestaurantViewHolder(view)
-
-//        val layout = if (viewType == 0) R.layout.item_restaurant else R.layout.item_restaurant1
-//        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
-//        return RestaurantViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {

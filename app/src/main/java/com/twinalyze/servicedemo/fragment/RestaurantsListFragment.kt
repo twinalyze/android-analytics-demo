@@ -13,13 +13,10 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.JsonArray
-import com.google.gson.JsonParser
 import com.twinalyze.servicedemo.R
 import com.twinalyze.servicedemo.RestaurantRepository
 import com.twinalyze.servicedemo.RestaurantsDetailsActivity
 import com.twinalyze.servicedemo.adapter.RestaurantAdapter
-import com.twinalyze.servicedemo.model.RestaurantModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -110,61 +107,6 @@ class RestaurantsListFragment : Fragment() {
                 emptyText?.isVisible = true
             }
         }
-
-        /*// RecyclerViewRestaurants setup
-        val recyclerRestaurants = view.findViewById<RecyclerView>(R.id.recyclerVeg)
-        val emptyText = view.findViewById<TextView?>(R.id.tvEmpty)       // optional empty-state TextView
-
-        recyclerRestaurants.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-
-        val json = readRawText(requireContext(), R.raw.restaurantdata)
-        val restaurantModel: RestaurantModel = fromJson(json)
-
-        // filter null items
-        val restaurantList = restaurantModel.restaurant?.filterNotNull() ?: emptyList()
-
-        Log.d("restaurantList", "onCreateView: "+restaurantList.toString())
-
-        // 🔹 Log all data
-        restaurantList.forEachIndexed { index, r ->
-            Log.d("HomeFragment", "[$index] -> ${r.restaurantName}")
-        }
-
-        val key = categoryLabel.normKey()
-        // 3) Filter by the active tab
-        Log.d("restaurantList", "onCreateView: "+key)
-
-
-        val filtered = when (key) {
-            "veg"     -> restaurantList.filter { it.restaurantFoodType.hasVeg() }
-            "non veg" -> restaurantList.filter { it.restaurantFoodType.hasNonVeg() }
-            "top rated", "top" -> restaurantList.filter {
-                it.restaurantRated?.toIntOrNull() == 1   // ✅ only rated = 1
-            }
-            else -> restaurantList
-        }
-
-        // 🔹 Setup adapter ONCE
-        restaurantAdapter = RestaurantAdapter(filtered,R.layout.item_restaurant1){ restaurant ->
-            // 👇 Click par action
-            // Example: Next page open
-            val intent = Intent(requireContext(), RestaurantsDetailsActivity::class.java)
-            intent.putExtra("restaurantName", restaurant.restaurantName)
-            intent.putExtra("restaurantStar", restaurant.restaurantStar)
-            intent.putExtra("restaurantAddress", restaurant.restaurantAddress)
-            intent.putExtra("restaurantType", restaurant.restaurantType)
-            intent.putExtra("restaurantNear", restaurant.restaurantNear)
-            intent.putExtra("restaurantImage", restaurant.restaurantImage)
-            intent.putExtra("restaurantDescription", restaurant.restaurantDescription)
-            startActivity(intent)
-        }
-        recyclerRestaurants.adapter = restaurantAdapter
-
-        // 5) Empty state (optional)
-        val isEmpty = filtered.isEmpty()
-        emptyText?.isVisible = isEmpty
-        recyclerRestaurants.isVisible = !isEmpty*/
 
         return view
     }

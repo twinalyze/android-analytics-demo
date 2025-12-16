@@ -38,8 +38,6 @@ class CategoryListActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-//        putExtra("category_name", clickedItem.foodCategories)
-//        putExtra("category_items_json", json)
 
         SetAnalytics.getInstance()
             .setActivityEvent(

@@ -8,14 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <!-- &lt;!&ndash; ViewPager2 for fragments &ndash;&gt;
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />-->
-
-    <!-- FrameLayout (Container for Fragments) -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -66,21 +58,7 @@
                 android:visibility="invisible" />
         </LinearLayout>
 
-
     </LinearLayout>
-
-    <!-- BottomNavigationView -->
-    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/_10sdp"
-        android:background="@android:color/white"
-        app:menu="@menu/menu_bottom"
-        android:layout_alignParentBottom="true"
-        app:itemTextColor="@color/nav_item_colors"
-        app:itemTextAppearanceActive="@style/TextAppearance.BottomNav.Regular"
-        app:itemTextAppearanceInactive="@style/TextAppearance.BottomNav.Regular"/>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

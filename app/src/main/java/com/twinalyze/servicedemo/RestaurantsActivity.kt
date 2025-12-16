@@ -63,14 +63,6 @@ class RestaurantsActivity : AppCompatActivity() {
         val adapter = TabPagerAdapter(this)
         viewPager.adapter = adapter
 
-//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-//            tab.text = when (position) {
-//                0 -> "Veg"
-//                1 -> "Non Veg"
-//                else -> "Top Rated"
-//            }
-//        }.attach()
-
         tabLayout.addTab(tabLayout.newTab().setText("Veg"))
         tabLayout.addTab(tabLayout.newTab().setText("Non Veg"))
         tabLayout.addTab(tabLayout.newTab().setText("Top Rated"))
@@ -131,20 +123,6 @@ class RestaurantsActivity : AppCompatActivity() {
         override fun createFragment(position: Int): Fragment =
             RestaurantsListFragment.newInstance(categories[position])
     }
-
-//    class TabPagerAdapter(fragmentActivity: FragmentActivity) :
-//        FragmentStateAdapter(fragmentActivity) {
-//
-//        override fun getItemCount(): Int = 3
-//
-//        override fun createFragment(position: Int): Fragment {
-//            return when (position) {
-//                0 -> VegFragment()
-//                1 -> NonVegFragment()
-//                else -> TopRatedFragment()
-//            }
-//        }
-//    }
 
     override fun onResume() {
         super.onResume()

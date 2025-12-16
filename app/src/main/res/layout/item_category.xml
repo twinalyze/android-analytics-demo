@@ -13,17 +13,6 @@
         android:layout_height="48dp"
         android:src="@drawable/ic_pizza" />
 
-    <!--<com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgCategory"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/CircleImage"
-        app:strokeWidth="1dp"
-        android:src="@drawable/ic_img"
-        app:strokeColor="@android:color/darker_gray" />-->
-
-
     <TextView
         android:id="@+id/txtCategory"
         android:layout_width="wrap_content"

@@ -4,16 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.widget.doOnTextChanged
 import com.twinalyze.alldatget.AllScreenTracker
 import com.twinalyze.event.SetAnalytics
 
@@ -55,35 +52,6 @@ class LoginActivity : AppCompatActivity() {
            }
        }
 
-        /*btnSkip.setOnClickListener {
-            btnSkip.isEnabled = false          // avoid double taps
-            hideKeyboard()
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-            overridePendingTransition(0, 0)    // no animation = snappier
-        }*/
-
-        /*btnSkip.setOnClickListener {
-            btnSkip.isEnabled = false
-            val t0 = android.os.SystemClock.uptimeMillis()
-
-            // Close keyboard fast
-            val ctrl = ViewCompat.getWindowInsetsController(window.decorView)
-            ctrl?.hide(WindowInsetsCompat.Type.ime())
-            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-                .hideSoftInputFromWindow((currentFocus ?: window.decorView).windowToken, 0)
-            currentFocus?.clearFocus()
-
-            // Jump to Main with no animation
-            startActivity(Intent(this, MainActivity::class.java)
-                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
-            overridePendingTransition(0, 0)
-            finish()
-            android.util.Log.d(
-                "TRACE",
-                "After startActivity, total123=${android.os.SystemClock.uptimeMillis() - t0}ms"
-            )
-        }*/
-
         btnSkip.setOnClickListener {
             val navStart = android.os.SystemClock.uptimeMillis()
 
@@ -107,13 +75,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun hideKeyboard() {
-        currentFocus?.let { v ->
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-            imm.hideSoftInputFromWindow(v.windowToken, 0)
-            v.clearFocus()
-        }
-    }
 
     override fun onResume() {
         super.onResume()

@@ -17,7 +17,6 @@ import com.google.gson.Gson
 import com.twinalyze.servicedemo.MainActivity
 import com.twinalyze.servicedemo.R
 import com.twinalyze.servicedemo.adapter.CartFoodAdapter
-import com.twinalyze.servicedemo.model.CartRow
 import com.twinalyze.servicedemo.model.Food
 
 
@@ -66,12 +65,6 @@ class CartFragment : Fragment() {
         // get prefs
         prefs = requireContext().getSharedPreferences("my_prefs", MODE_PRIVATE)   // Fragment: requireContext().getSharedPreferences(...)
 
-//        cartCount = prefs.getInt("cart_count", 0)
-//        foodName = prefs.getString("food_name",null)
-//        foodPrice = prefs.getString("food_price",null)
-//        foodImg = prefs.getString("food_img",null)
-
-
         val gson = com.google.gson.Gson()
         val type1 = object : com.google.gson.reflect.TypeToken<List<Food>>() {}.type
 
@@ -81,11 +74,6 @@ class CartFragment : Fragment() {
 
         val recyclerFood = view.findViewById<RecyclerView>(R.id.recyclerItems)
         recyclerFood.layoutManager = LinearLayoutManager(requireContext())
-
-//        val foodList = mutableListOf(
-//            Food("Margherita Pizza", "Regular", 299, R.drawable.ic_pizza_food),
-//            Food("Spicy Veggie Delight", "Large", 399, R.drawable.ic_pizza_food)
-//        )
 
 
         val foodList = cart.toMutableList()
@@ -120,8 +108,6 @@ class CartFragment : Fragment() {
             intent.putExtra("food_list", json)
             startActivity(intent)
             prefs.edit().clear().apply()
-
-//            (requireActivity() as MainActivity).selectTabHome()
 
 
         }

@@ -10,10 +10,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.twinalyze.servicedemo.OrdersDetailsActivity
 import com.twinalyze.servicedemo.R
 import com.twinalyze.servicedemo.model.Food
@@ -52,7 +49,6 @@ class OrderAdapter (
 
         // 🔹 Status color
         holder.txtStatus.setTextColor(ContextCompat.getColor(holder.itemView.context, order.statusColor))
-//        holder.txtStatus.backgroundTintList = ContextCompat.getColorStateList(holder.itemView.context, order.statusBg)
         holder.txtStatus.backgroundTintList = ColorStateList.valueOf(Color.parseColor("#FFF7DB")) // new tint
         holder.txtStatus.setTextColor(Color.parseColor("#E39F00"))
 

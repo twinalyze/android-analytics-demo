@@ -1,7 +1,6 @@
 package com.twinalyze.servicedemo.adapter
 
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,21 +32,16 @@ class FoodCategoryAdapter(
         val category = categories[position]
         holder.txtCategory.text = category
 
-        // highlight selected
         if (selectedPos == position) {
-//            holder.card.setCardBackgroundColor(Color.BLACK)
             holder.card.backgroundTintList =
                 ColorStateList.valueOf(ContextCompat.getColor(holder.itemView.context, R.color.black))
-//            holder.txtCategory.setTextColor(Color.WHITE)
             holder.txtCategory.setTextColor(
                 ContextCompat.getColor(holder.itemView.context, R.color.white)
             )
 
         } else {
-//            holder.card.setCardBackgroundColor(Color.WHITE)
             holder.card.backgroundTintList =
                 ColorStateList.valueOf(ContextCompat.getColor(holder.itemView.context, R.color.tags_unselected_color))
-//            holder.txtCategory.setTextColor(Color.GRAY)
             holder.txtCategory.setTextColor(
                 ContextCompat.getColor(holder.itemView.context, R.color.unselected_color)
             )

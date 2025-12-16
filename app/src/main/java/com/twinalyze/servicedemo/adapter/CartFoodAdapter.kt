@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.google.android.material.resources.MaterialResources.getDimensionPixelSize
 import com.twinalyze.servicedemo.R
 import com.twinalyze.servicedemo.model.Food
 

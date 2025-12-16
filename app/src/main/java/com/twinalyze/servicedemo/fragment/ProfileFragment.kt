@@ -20,12 +20,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
 import androidx.core.content.FileProvider
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.LoginActivity
-import com.twinalyze.servicedemo.MainActivity
 import com.twinalyze.servicedemo.R
 import java.io.File
-import java.nio.file.Files.exists
 
 class ProfileFragment : Fragment() {
 
@@ -147,10 +144,6 @@ class ProfileFragment : Fragment() {
             txtName.text = edtFullName.text.toString()
             txtMobile.text = edtMobile.text.toString()
 
-//            edtFullName.text = null
-//            edtEmail.text = null
-//            edtMobile.text = null
-
             Toast.makeText(requireContext(), "Profile saved successfully", Toast.LENGTH_SHORT).show()
         }
 
@@ -185,7 +178,6 @@ class ProfileFragment : Fragment() {
 
         btnYes.setOnClickListener {
             // Perform logout action
-//            Toast.makeText(requireContext(), "Logged out", Toast.LENGTH_SHORT).show()
 
             startActivity(Intent(context, LoginActivity::class.java))
 
@@ -210,18 +202,6 @@ class ProfileFragment : Fragment() {
 
         // Launch camera
         takePictureLauncher.launch(photoUri)
-    }
-
-    private fun deleteCachedFileForUri(uri: Uri) {
-        // Works for our FileProvider cache path
-        try {
-            val path = uri.path ?: return
-            // path looks like: /cache/images/capture_xxx.jpg (device-dependent)
-            // safer: resolve real file from cacheDir
-            requireContext().cacheDir.resolve("images").listFiles()?.forEach { f ->
-                if (uri.toString().endsWith(f.name)) f.delete()
-            }
-        } catch (_: Exception) {}
     }
 
 }

@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    tools:context=".fragment.HomeFragment"-->
-<!--    android:layout_gravity="center"-->
-<!--    android:gravity="center">-->
-
 <androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -203,53 +194,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/section1" />
-
-                        <!--&lt;!&ndash; Foreground content &ndash;&gt;
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="12dp">
-
-                            &lt;!&ndash; Left Texts &ndash;&gt;
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_centerVertical="true"
-                                android:gravity="center_vertical">
-
-                                <TextView
-                                    android:id="@+id/txtOfferTitle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Flat 20% OFF on\nfirst order"
-                                    android:textStyle="bold"
-                                    android:fontFamily="@font/sf_pro_bold"
-                                    android:textColor="#673AB7"
-                                    android:textSize="16sp" />
-
-                                <TextView
-                                    android:id="@+id/txtOfferSubtitle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
-                                    android:fontFamily="@font/sf_pro_regular"
-                                    android:text="Get Free Delivery on First\n3 Orders."
-                                    android:textColor="#525252"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                            &lt;!&ndash; Right Image &ndash;&gt;
-                            <ImageView
-                                android:id="@+id/imgOffer"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_alignParentEnd="true"
-                                android:scaleType="centerCrop"
-                                android:layout_centerVertical="true"
-                                android:src="@drawable/ic_food_offer" />
-
-                        </RelativeLayout>-->
 
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>

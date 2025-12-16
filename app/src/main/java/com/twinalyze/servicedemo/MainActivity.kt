@@ -83,11 +83,6 @@ class MainActivity : AppCompatActivity() {
         }
         ordersFragment.arguments = bundle
 
-        // 🔹 Add fragments once and hide inactive
-//        if (savedInstanceState == null) {
-//
-//            loadFragment(homeFragment)
-//        }
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -106,12 +101,6 @@ class MainActivity : AppCompatActivity() {
                 )
         }
 
-//        if (savedInstanceState == null) {
-//            activeFragment = homeFragment
-//            supportFragmentManager.beginTransaction()
-//                .add(R.id.fragment_container, homeFragment, "home")
-//                .commit()
-//        }
 
         // 🔹 Handle navigation clicks
         window.decorView.post {
@@ -175,10 +164,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun selectTabHome() {
-        bottomNav.selectedItemId = R.id.nav_orders
-    }
-
     override fun onResume() {
         super.onResume()
         val fragName = intent.getStringExtra("fragmentName")
@@ -200,11 +185,6 @@ class MainActivity : AppCompatActivity() {
         activeFragment = target
     }
 
-//    private fun loadFragment(fragment: Fragment) {
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id.fragment_container, fragment)
-//            .commit()
-//    }
 
     private fun loadFragment(target: Fragment) {
         if (target === activeFragment) return

@@ -8,31 +8,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 private fun BottomNavigationView.dp(v: Int) =
     (v * resources.displayMetrics.density).toInt()
 
-/*fun BottomNavigationView.setIconTextGapSafe(gapDp: Int = 8) {
-    post {
-        val gap = dp(gapDp)
-        val menu = getChildAt(0) as ViewGroup
-        for (i in 0 until menu.childCount) {
-            val item = menu.getChildAt(i)
-            val small = item.findViewById<TextView>(
-                com.google.android.material.R.id.navigation_bar_item_small_label_view
-            )
-            val large = item.findViewById<TextView>(
-                com.google.android.material.R.id.navigation_bar_item_large_label_view
-            )
-            listOfNotNull(small, large).forEach { tv ->
-                val lp = tv.layoutParams
-                if (lp is ViewGroup.MarginLayoutParams) {
-                    lp.topMargin = gap
-                    tv.layoutParams = lp
-                } else {
-                    tv.setPadding(tv.paddingLeft, tv.paddingTop + gap, tv.paddingRight, tv.paddingBottom)
-                }
-            }
-        }
-    }
-}*/
-
 fun BottomNavigationView.setIconAndLabelSpacing(
     gapDp: Int = 8,
     iconSizeDp: Int? = 20,

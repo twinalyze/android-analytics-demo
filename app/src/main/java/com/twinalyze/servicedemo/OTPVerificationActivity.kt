@@ -76,14 +76,6 @@ class OTPVerificationActivity : AppCompatActivity() {
         e4.autoMoveTo(e5)
         e5.autoMoveTo(e6)
 
-//        btnVerify.setOnClickListener {
-//            val code = otpCode()
-//            if (code.length == 6) {
-//                startActivity(Intent(this, MainActivity::class.java))
-//            } else {
-//                Toast.makeText(this, "Please enter 6-digit code", Toast.LENGTH_SHORT).show()
-//            }
-//        }
 
         btnVerify.setOnClickListener {
             val t0 = android.os.SystemClock.uptimeMillis()

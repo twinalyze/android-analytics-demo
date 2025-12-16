@@ -23,9 +23,6 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
-//        Analytics.getInstance().initialize(application,"4fimw0iOprVZEExZxklS0sVWNur6LRK","roko_3508226134",true)
-//        Analytics.getInstance().initialize(application,"Kxh1lOuZFONiPRiSdfWMxcuW9adqHnF","vrutikatest_8940280504",true)
-
         SetAnalytics.getInstance().setSplashTimeEvent(1000)
 
         SetAnalytics.getInstance()
@@ -42,14 +39,10 @@ class SplashActivity : AppCompatActivity() {
         val handler = Handler(Looper.getMainLooper())
 
         lifecycleScope.launch {
-            // JSON + parse in background
             RestaurantRepository.preload(applicationContext)
 
-            // When ready (or even if it’s still running short), go ahead
             handler.postDelayed({
-                // Code will run after 2 seconds
                 startActivity(Intent(this@SplashActivity, StartActivity::class.java))
-//            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             }, 2000)
         }
     }

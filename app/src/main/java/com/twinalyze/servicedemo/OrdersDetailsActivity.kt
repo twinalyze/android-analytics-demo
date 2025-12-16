@@ -50,9 +50,6 @@ class OrdersDetailsActivity : AppCompatActivity() {
         val orderDate = intent.getStringExtra("OrderDate")
         val restaurantName = intent.getStringExtra("RestaurantName")
         val restaurantAddress = intent.getStringExtra("RestaurantAddress")
-//        val json = intent.getStringExtra("OrderItemListJson")
-//        val type = object : TypeToken<List<Food>>() {}.type
-//        val orderItems: List<Food> = Gson().fromJson(json, type)
 
         val orderItems = intent.getSerializableExtra("OrderItemList") as? ArrayList<Food>
         Log.d("ordersAdapter", "onCreate ordersAdapter: "+orderItems)
@@ -91,35 +88,9 @@ class OrdersDetailsActivity : AppCompatActivity() {
 
         txtTotal.text = total.toString()
 
-        // 🔹 Dynamically add food items to layout
-//        for (food in orderItems) {
-//            val row = LayoutInflater.from(this).inflate(R.layout.item_food_row, layoutFoodItems, false)
-//
-//            val txtFoodName = row.findViewById<TextView>(R.id.txtFoodName)
-//            val txtPrice = row.findViewById<TextView>(R.id.txtPrice)
-//
-//            txtFoodName.text = "1x ${food.name}"
-//            txtPrice.text = "${food.price}"
-//
-//            layoutFoodItems.addView(row)
-//        }
-
-
         btnBack.setOnClickListener {
             onBackPressed()
         }
-
-//        btnCancelOrder.setOnClickListener {
-//
-//            val intent = Intent(this, MainActivity::class.java)
-//            intent.putExtra("OrdersDetailsActivity", "OrdersDetailsActivity")
-//            intent.putExtra("restaurantName", restaurantName)
-//            intent.putExtra("restaurantAddress", restaurantAddress)
-//            val json = Gson().toJson(orderItems)
-//            intent.putExtra("food_list", json)
-//            startActivity(intent)
-//
-//        }
 
         btnComplete.setOnClickListener {
             updateOrderStatus(orderId, "Complete")
@@ -129,8 +100,6 @@ class OrdersDetailsActivity : AppCompatActivity() {
             updateOrderStatus(orderId, "Cancelled")
         }
 
-//        intent.putExtra("orderId", "#${order.orderId}")
-//        intent.putExtra("restaurantName", order.restaurantName)
     }
 
     fun saveOrdersToPrefs(context: Context, orders: List<Order>) {

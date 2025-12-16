@@ -51,27 +51,11 @@ class HomeFragment : Fragment() {
     private lateinit var flatBanner: CardView
     private lateinit var cartDetail: View
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-//    private lateinit var prefs: SharedPreferences
     private val prefs by lazy {
         requireContext().getSharedPreferences("my_prefs", Context.MODE_PRIVATE)
     }
 
     private var cartCount = 0  // 🔢 badge counter
-
-
-    // ✅ Step 1: Register permission launcher
-    private val requestLocationPermission =
-        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            if (isGranted) {
-                Toast.makeText(requireContext(), "✅ Location permission granted", Toast.LENGTH_SHORT).show()
-                getUserLocation { address ->
-                    txtAddress.text = address
-                }
-
-            } else {
-                Toast.makeText(requireContext(), "❌ Location permission denied", Toast.LENGTH_SHORT).show()
-            }
-        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -192,227 +176,6 @@ class HomeFragment : Fragment() {
             Log.e("HomeFragment", "Init error", e)
         }
 
-        /*try {
-            badge = view.findViewById<TextView>(R.id.txtCartBadge)
-            txtAddress = view.findViewById<TextView>(R.id.txtAddress)
-//            rl_cart = view.findViewById<TextView>(R.id.rl_cart)
-            drawerLayout = view.findViewById(R.id.drawerLayout)
-            cartDetail = view.findViewById(R.id.rl_cart)
-
-            checkLocationPermission()
-
-//            txtAddress.text = getUserLocation()
-
-            // make sure it’s clickable
-            cartDetail.isClickable = true
-            cartDetail.isFocusable = true
-
-            drawerLayout.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
-
-                override fun onDrawerOpened(drawerView: View) {
-                    // drawer opened
-                    if (drawerView.id == R.id.drawer_container) {
-                        // e.g. load/refresh your cart fragment here
-                        if (requireActivity().supportFragmentManager.findFragmentById(R.id.drawer_container) == null) {
-                            requireActivity().supportFragmentManager.beginTransaction()
-                                .replace(R.id.drawer_container, CartFragment())
-                                .commit()
-                        }
-                    }
-                }
-
-                override fun onDrawerClosed(drawerView: View) {
-                    // drawer closed
-//                if (drawerView.id == R.id.drawer_container) {
-//                    // optional: cleanup, persist, or refresh badge here
-//                    val prefs = getSharedPreferences("my_prefs", MODE_PRIVATE)
-//                    updateCartCount(prefs.getInt("cart_count", 0))
-//                }
-                }
-
-                override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-                    // called continuously while sliding (0f..1f)
-                }
-
-                override fun onDrawerStateChanged(newState: Int) {
-                    // STATE_IDLE, STATE_DRAGGING, STATE_SETTLING
-                }
-            })
-
-            cartDetail.setOnClickListener {
-                if (drawerLayout.isDrawerOpen(GravityCompat.END)) {
-                    drawerLayout.closeDrawer(GravityCompat.END)
-                } else {
-                    drawerLayout.openDrawer(GravityCompat.END)
-                }
-            }
-
-            // get prefs
-//            prefs = requireContext().getSharedPreferences("my_prefs", MODE_PRIVATE)   // Fragment: requireContext().getSharedPreferences(...)
-
-            cartCount = prefs.getInt("cart_count", 0)
-            badge.text = cartCount.toString()
-            Log.d("cartCount", "onCreateView: "+cartCount)
-
-            // RecyclerViewCategories setup
-            val recyclerCategories = view.findViewById<RecyclerView>(R.id.recyclerCategories)
-            recyclerCategories.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-            val json = readRawText(requireContext(), R.raw.restaurantdata)
-            val restaurantModel: RestaurantModel = fromJson(json)
-            val restaurantList = restaurantModel.restaurant?.filterNotNull() ?: emptyList()
-            val foodList = restaurantList.flatMap { it.food?.filterNotNull() ?: emptyList() }
-
-            val categoryNames: List<String> =
-                foodList
-                    .mapNotNull { it.foodCategories }          // take "Pizza", etc.
-                    .flatMap { it.split(",") }                  // if ever "Pizza, Burger"
-                    .map { it.trim() }
-                    .filter { it.isNotEmpty() }
-                    .distinct()
-                    .sorted()
-            Log.d("categoryNames", "onCreateView: "+categoryNames)
-
-            val catToImage: Map<String, String?> =
-                foodList
-                    .filter { !it.foodCategories.isNullOrBlank() }
-                    .groupBy { it.foodCategories!!.split(",").first().trim() } // if multiple, take first
-                    .mapValues { (_, foods) -> foods.firstOrNull()?.foodImage }
-
-
-            // 1) Build groups + a display list
-            val norm: (String?) -> String = { it?.trim()?.lowercase() ?: "" }
-
-            val groupedByCategory: Map<String, List<FoodItem>> = foodList
-                .filter { !it.foodCategories.isNullOrBlank() }
-                .groupBy { norm(it.foodCategories) }
-
-// Pick a representative item per category to display
-            val displayList: MutableList<FoodItem> = groupedByCategory
-                .map { (_, items) ->
-                    items.firstOrNull { !it.foodImage.isNullOrBlank() } ?: items.first()
-                }
-                .sortedBy { it.foodCategories!!.lowercase() }
-                .toMutableList()
-
-// 2) Use the display list in the adapter
-            recyclerCategories.adapter = CategoryAdapter(displayList) { clickedItem ->
-                // 3) On click, fetch ALL items for that category
-                val key = norm(clickedItem.foodCategories)
-                val fullListForCategory: List<FoodItem> = groupedByCategory[key].orEmpty()
-
-                // --- Option A: navigate and PASS ALL items (JSON) ---
-                val gson = Gson()
-                val json = gson.toJson(fullListForCategory)
-                val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
-                    putExtra("category_name", clickedItem.foodCategories)
-                    putExtra("category_items_json", json)
-                }
-                startActivity(intent)
-
-            }
-
-            // RecyclerViewRestaurants setup
-            val recyclerRestaurants = view.findViewById<RecyclerView>(R.id.recyclerRestaurants)
-            recyclerRestaurants.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-
-            // Make a list with two different restaurants
-            val restaurants = listOf(
-                RestaurantItem(
-                    restaurantName = "Pizza Planet",
-                    restaurantAddress = "Near Race Course, Surat",
-                    restaurantStar = "4.5",
-                    restaurantType = "Italian, Fast Food",
-                    restaurantNear = "2 Km",
-                    restaurantImage = "https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg"
-                ),
-                RestaurantItem(
-                    restaurantName = "Biryani House",
-                    restaurantAddress = "City Light, Surat",
-                    restaurantStar = "3.5",
-                    restaurantType = "North Indian, Mughlai",
-                    restaurantNear = "5 Km",
-                    restaurantImage = "https://content.jdmagicbox.com/comp/surat/p5/0261px261.x261.190417192731.k5p5/catalogue/biryani-house-surat-restaurants-0dgkx6dxo0.jpg"
-                ),
-                RestaurantItem(
-                    restaurantName = "Burger House",
-                    restaurantAddress = "Adajan, Surat",
-                    restaurantStar = "3.8",
-                    restaurantType = "Fast Food, Burgers",
-                    restaurantNear = "3 Km",
-                    restaurantImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf4yhgzX187s91NfSizODvE-m85qoDvKPVDJpSymjYsORq8CZBrPFN9INV4dhzkGAAQsQ"
-                )
-            )
-
-            // 🔹 Log all data
-            restaurantList.forEachIndexed { index, r ->
-                Log.d("HomeFragment", "[$index] -> ${r.restaurantName}")
-            }
-
-            // 🔹 Setup adapter ONCE
-            restaurantAdapter = RestaurantAdapter(restaurantList, R.layout.item_restaurant){ restaurant ->
-                // 👇 Click par action
-
-                // Example: Next page open
-                val intent = Intent(requireContext(), RestaurantsDetailsActivity::class.java)
-                intent.putExtra("restaurantName", restaurant.restaurantName)
-                intent.putExtra("restaurantStar", restaurant.restaurantStar)
-                intent.putExtra("restaurantAddress", restaurant.restaurantAddress)
-                intent.putExtra("restaurantType", restaurant.restaurantType)
-                intent.putExtra("restaurantNear", restaurant.restaurantNear)
-                intent.putExtra("restaurantImage", restaurant.restaurantImage)
-                intent.putExtra("restaurantDescription", restaurant.restaurantDescription)
-
-                startActivity(intent)
-            }
-            recyclerRestaurants.adapter = restaurantAdapter
-
-            // RecyclerViewFood setup
-            val recyclerFood = view.findViewById<RecyclerView>(R.id.recyclerFood)
-            recyclerFood.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-
-            val foodAdapter = FoodAdapter(foodList.toMutableList()) { foodItem ->
-                cartCount += 1
-
-                val gson = Gson()
-                val type = object : com.google.gson.reflect.TypeToken<MutableList<Food>>() {}.type
-
-                // read existing cart
-                val cartJson = prefs.getString("cart_json", null)
-                val cart: MutableList<Food> = if (cartJson.isNullOrEmpty()) mutableListOf()
-                else gson.fromJson(cartJson, type)
-
-                // add current item
-                cart += Food(foodItem.foodName.orEmpty(), foodItem.foodPrice.orEmpty(), foodItem.foodImage.orEmpty(),1)
-
-                // save once
-                prefs.edit().putString("cart_json", gson.toJson(cart)).apply()
-
-                prefs.edit().putInt("cart_count", cartCount).apply()
-
-                updateCartCount(cartCount)  // 👈 updates txtCartBadge
-                // (optional) also keep a simple list if you need items later:
-                // cartItems.add(foodItem)
-            }
-            recyclerFood.adapter = foodAdapter
-
-            Log.d("HomeFragment", "onCreateView foodList: " + foodList)
-
-
-            val txtSeeAll = view.findViewById<TextView>(R.id.txtSeeAll)
-            txtSeeAll.setOnClickListener {
-                startActivity(Intent(requireContext(), RestaurantsActivity::class.java))
-            }
-
-
-        }catch (e: Exception) {
-            Log.d("HomeFragment", "Parse/Bind error", e)
-        }*/
-
         return view
     }
 
@@ -420,14 +183,8 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         // get prefs
-//        prefs = requireContext().getSharedPreferences("my_prefs", MODE_PRIVATE)   // Fragment: requireContext().getSharedPreferences(...)
         cartCount = prefs.getInt("cart_count", 0)
         badge.text = cartCount.toString()
-//        updateCartCount(cartCount)
-
-
-//        checkLocationPermission()
-
         Log.d("cartCount", "onResume111: ")
     }
 
@@ -443,12 +200,6 @@ class HomeFragment : Fragment() {
                             .replace(R.id.drawer_container, CartFragment())
                             .commit()
                     }
-
-//                    SetAnalytics.getInstance()
-//                        .setDrawerEvent(
-//                            this@HomeFragment, // screenClass
-//                            "open"             // action (open or close)
-//                        )
                 }
             }
 
@@ -513,41 +264,6 @@ class HomeFragment : Fragment() {
 
 
                 withContext(Dispatchers.Main) {
-                    // Categories
-                    /*recyclerCategories.adapter = CategoryAdapter(displayList) { clickedItem ->
-                        val key = norm(clickedItem.foodCategories)
-                        val fullListForCategory = groupedByCategory[key].orEmpty()
-                        val gson = Gson()
-                        val jsonItems = gson.toJson(fullListForCategory)
-                        val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
-                            putExtra("category_name", clickedItem.foodCategories)
-                            putExtra("category_items_json", jsonItems)
-                        }
-                        startActivity(intent)
-                    }*/
-                    /*recyclerCategories.adapter = CategoryAdapter(mutableListOf()) { clickedCategory ->
-                        val key = norm(clickedCategory.categoriesName)
-                        val items = foodsByCategory[key].orEmpty()
-
-                        // Option A: pass as JSON (works even if FoodItem is not Parcelable)
-                        val json = Gson().toJson(items)
-                        val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
-                            putExtra("category_name", clickedCategory.categoriesName)
-                            putExtra("category_items_json", json)
-                        }
-                        startActivity(intent)
-
-                        // ---- Option B: pass as Parcelable list (only if FoodItem : Parcelable) ----
-                        // val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
-                        //     putExtra("category_name", clickedCategory.categoriesName)
-                        //     putParcelableArrayListExtra("category_items", ArrayList(items))
-                        // }
-                        // startActivity(intent)
-                    }*/
-
-
-
-
                     // Restaurants
                     restaurantAdapter = RestaurantAdapter(
                         restaurants,
@@ -601,10 +317,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
-    // endregion
-
-    // already in your class
     fun updateCartCount(count: Int) {
         if (count >= 0) {
             badge.text = count.toString()

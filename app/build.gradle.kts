@@ -73,7 +73,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-    implementation(libs.sdp.android)
+//    implementation(libs.sdp.android)
     implementation("com.google.code.gson:gson:2.11.0")
     implementation("com.github.bumptech.glide:glide:5.0.5")
     implementation("com.google.android.gms:play-services-location:21.3.0")
