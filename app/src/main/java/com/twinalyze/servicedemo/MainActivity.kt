@@ -13,8 +13,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.fragment.HomeFragment
 import com.twinalyze.servicedemo.fragment.OrdersFragment
 import com.twinalyze.servicedemo.fragment.ProfileFragment
@@ -88,17 +88,14 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .add(R.id.fragment_container, homeFragment, "home")
                 .add(R.id.fragment_container, ordersFragment, "orders").hide(ordersFragment)
+                .hide(ordersFragment)
+                .setMaxLifecycle(ordersFragment, Lifecycle.State.STARTED)
                 .add(R.id.fragment_container, profileFragment, "profile").hide(profileFragment)
+                .hide(profileFragment)
+                .setMaxLifecycle(profileFragment, Lifecycle.State.STARTED)
                 .commit()
             activeFragment = homeFragment
 
-            SetAnalytics.getInstance()
-                .setFragmentEvent(
-                    "HomeFragment manual",    // screenName
-                    this,                // screenClass
-                    homeFragment,  // fragmentClass
-                    0                  // fragmentIndex
-                )
         }
 
 
@@ -111,17 +108,6 @@ class MainActivity : AppCompatActivity() {
                         indicatorHome.isVisible = true
                         indicatorOrders.isInvisible = true
                         indicatorProfile.isInvisible = true
-
-
-                        SetAnalytics.getInstance()
-                            .setFragmentEvent(
-                                "HomeFragment manual",    // screenName
-                                this,                // screenClass
-                                homeFragment,  // fragmentClass
-                                0                  // fragmentIndex
-                            )
-
-
                         true
                     }
 
@@ -130,14 +116,6 @@ class MainActivity : AppCompatActivity() {
                         indicatorHome.isInvisible = true
                         indicatorOrders.isVisible = true
                         indicatorProfile.isInvisible = true
-
-                        SetAnalytics.getInstance()
-                            .setFragmentEvent(
-                                "OrdersFragment manual",    // screenName
-                                this,                // screenClass
-                                ordersFragment,  // fragmentClass
-                                0                  // fragmentIndex
-                            )
                         true
                     }
 
@@ -147,13 +125,6 @@ class MainActivity : AppCompatActivity() {
                         indicatorOrders.isInvisible = true
                         indicatorProfile.isVisible = true
 
-                        SetAnalytics.getInstance()
-                            .setFragmentEvent(
-                                "ProfileFragment manual",    // screenName
-                                this,                // screenClass
-                                profileFragment,  // fragmentClass
-                                0                  // fragmentIndex
-                            )
                         true
                     }
 
@@ -181,17 +152,21 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .hide(activeFragment)
             .show(target)
+            .setMaxLifecycle(activeFragment, Lifecycle.State.STARTED)
+            .setMaxLifecycle(target, Lifecycle.State.RESUMED)
             .commitAllowingStateLoss()
         activeFragment = target
     }
 
 
     private fun loadFragment(target: Fragment) {
-        if (target === activeFragment) return
         supportFragmentManager.beginTransaction()
             .hide(activeFragment)
             .show(target)
+            .setMaxLifecycle(activeFragment, Lifecycle.State.STARTED)
+            .setMaxLifecycle(target, Lifecycle.State.RESUMED)
             .commit()
+        if (target === activeFragment) return
         activeFragment = target
     }
 

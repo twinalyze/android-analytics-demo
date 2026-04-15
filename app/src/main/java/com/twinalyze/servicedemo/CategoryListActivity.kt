@@ -3,9 +3,7 @@ package com.twinalyze.servicedemo
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,12 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.twinalyze.alldatget.AllScreenTracker
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.adapter.FoodAdapter
 import com.twinalyze.servicedemo.model.Food
 import com.twinalyze.servicedemo.model.FoodItem
-import com.twinalyze.servicedemo.model.RestaurantModel
 
 class CategoryListActivity : AppCompatActivity() {
 
@@ -39,11 +34,6 @@ class CategoryListActivity : AppCompatActivity() {
             insets
         }
 
-        SetAnalytics.getInstance()
-            .setActivityEvent(
-                "CategoryListActivity manual",    // screenName
-                this@CategoryListActivity // screenClass
-            )
 
         val itemsJson   = intent.getStringExtra("category_items_json").orEmpty()
         val categoryName = intent.getStringExtra("category_name").orEmpty()
@@ -103,14 +93,4 @@ class CategoryListActivity : AppCompatActivity() {
         Toast.makeText(this, "${item.foodName} added to cart", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onResume() {
-        super.onResume()
-        if (AllScreenTracker.getInstance().isManualAppForeground) {
-            SetAnalytics.getInstance()
-                .setActivityEvent(
-                    "CategoryListActivity Foreground Manual", // screenName
-                    this@CategoryListActivity            // screenClass
-                )
-        }
-    }
 }

@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.doOnTextChanged
-import com.twinalyze.alldatget.AllScreenTracker
-import com.twinalyze.event.SetAnalytics
 
 class OTPVerificationActivity : AppCompatActivity() {
 
@@ -38,12 +36,6 @@ class OTPVerificationActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        SetAnalytics.getInstance()
-            .setActivityEvent(
-                "OTPVerificationActivity",    // screenName
-                this@OTPVerificationActivity // screenClass
-            )
 
         val e1 = findViewById<EditText>(R.id.et1)
         val e2 = findViewById<EditText>(R.id.et2)
@@ -134,14 +126,4 @@ class OTPVerificationActivity : AppCompatActivity() {
 
     private fun otpCode(): String = boxes.joinToString("") { it.text.toString() }
 
-    override fun onResume() {
-        super.onResume()
-        if (AllScreenTracker.getInstance().isManualAppForeground) {
-            SetAnalytics.getInstance()
-                .setActivityEvent(
-                    "OTPVerificationActivity Foreground Manual", // screenName
-                    this@OTPVerificationActivity            // screenClass
-                )
-        }
-    }
 }

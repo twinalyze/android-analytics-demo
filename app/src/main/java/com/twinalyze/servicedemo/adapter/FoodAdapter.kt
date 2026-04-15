@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.twinalyze.event.Analytics
+import com.twinalyze.Twinalyze
 import com.twinalyze.servicedemo.R
 import com.twinalyze.servicedemo.model.FoodItem
 import org.json.JSONObject
@@ -63,7 +63,7 @@ class FoodAdapter(private var foodList: List<FoodItem>, private val onAddClick: 
 
             }
 
-            Analytics.getInstance().setCustomEvent("AddToCart", eventProperties)
+            Twinalyze.setCustomEvent("AddToCart", eventProperties)
         }
     }
 

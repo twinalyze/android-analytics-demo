@@ -11,8 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.twinalyze.alldatget.AllScreenTracker
-import com.twinalyze.event.SetAnalytics
+import com.twinalyze.servicedemo.ads.Admob_InterstitialAd
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +23,6 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        SetAnalytics.getInstance()
-            .setActivityEvent(
-                "LoginActivity Manual",    // screenName
-                this@LoginActivity // screenClass
-            )
 
         val etNumber = findViewById<EditText>(R.id.et_number)
         val btnGetOtp = findViewById<Button>(R.id.btn_get_otp)
@@ -53,16 +46,11 @@ class LoginActivity : AppCompatActivity() {
        }
 
         btnSkip.setOnClickListener {
-            val navStart = android.os.SystemClock.uptimeMillis()
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
 
-            android.util.Log.d(
-                "TRACE",
-                "After startActivity, total123=${android.os.SystemClock.uptimeMillis() - navStart}ms"
-            )
         }
 
     }
@@ -72,18 +60,6 @@ class LoginActivity : AppCompatActivity() {
         post {
             val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
             imm.showSoftInput(this, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
-        }
-    }
-
-
-    override fun onResume() {
-        super.onResume()
-        if (AllScreenTracker.getInstance().isManualAppForeground) {
-            SetAnalytics.getInstance()
-                .setActivityEvent(
-                    "LoginActivity Foreground Manual", // screenName
-                    this@LoginActivity            // screenClass
-                )
         }
     }
 

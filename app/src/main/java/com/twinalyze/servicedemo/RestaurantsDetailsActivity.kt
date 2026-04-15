@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.twinalyze.alldatget.AllScreenTracker
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.adapter.FoodAdapter
 import com.twinalyze.servicedemo.adapter.FoodCategoryAdapter
 import com.twinalyze.servicedemo.fragment.CartFragment
@@ -50,12 +47,6 @@ class RestaurantsDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_restaurants_details)
-
-        SetAnalytics.getInstance()
-            .setActivityEvent(
-                "RestaurantsDetailsActivity Manual",    // screenName
-                this@RestaurantsDetailsActivity // screenClass
-            )
 
         recyclerCategories = findViewById<RecyclerView>(R.id.recyclerFoodCategories)
         recyclerFood = findViewById<RecyclerView>(R.id.recyclerFood)
@@ -188,19 +179,6 @@ class RestaurantsDetailsActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        Log.d("cartCount", "onResume: ")
-
-        if (AllScreenTracker.getInstance().isManualAppForeground) {
-            SetAnalytics.getInstance()
-                .setActivityEvent(
-                    "RestaurantsDetailsActivity Foreground Manual", // screenName
-                    this@RestaurantsDetailsActivity            // screenClass
-                )
-        }
-    }
-
     override fun onPause() {
         super.onPause()
         Log.d("cartCount", "onPause: ")
@@ -218,23 +196,11 @@ class RestaurantsDetailsActivity : AppCompatActivity() {
                             .replace(R.id.drawer_container, CartFragment())
                             .commit()
                     }
-
-                    SetAnalytics.getInstance()
-                        .setDrawerEvent(
-                            this@RestaurantsDetailsActivity, // screenClass
-                            "open"             // action (open or close)
-                        )
                 }
             }
 
             override fun onDrawerClosed(drawerView: View) {
                 super.onDrawerClosed(drawerView)
-
-                SetAnalytics.getInstance()
-                    .setDrawerEvent(
-                        this@RestaurantsDetailsActivity, // screenClass
-                        "close"             // action (open or close)
-                    )
             }
         })
 

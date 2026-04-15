@@ -176,6 +176,14 @@
                     android:scrollbars="none"/>
 
 
+                <FrameLayout
+                    android:id="@+id/adsContainer"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/flat_banner"
                     android:layout_width="match_parent"

@@ -15,8 +15,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.tabs.TabLayout
-import com.twinalyze.alldatget.AllScreenTracker
-import com.twinalyze.event.SetAnalytics
 import com.twinalyze.servicedemo.fragment.RestaurantsListFragment
 
 class RestaurantsActivity : AppCompatActivity() {
@@ -29,12 +27,6 @@ class RestaurantsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        SetAnalytics.getInstance()
-            .setActivityEvent(
-                "RestaurantsActivity Manual",    // screenName
-                this@RestaurantsActivity // screenClass
-            )
 
         val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
         val btnBack: ImageView = findViewById(R.id.btn_back)
@@ -122,18 +114,6 @@ class RestaurantsActivity : AppCompatActivity() {
         override fun getItemCount() = categories.size
         override fun createFragment(position: Int): Fragment =
             RestaurantsListFragment.newInstance(categories[position])
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        if (AllScreenTracker.getInstance().isManualAppForeground) {
-            SetAnalytics.getInstance()
-                .setActivityEvent(
-                    "RestaurantsActivity Foreground Manual", // screenName
-                    this@RestaurantsActivity            // screenClass
-                )
-        }
     }
 
 }

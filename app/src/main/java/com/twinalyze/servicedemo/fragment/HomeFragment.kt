@@ -34,6 +34,8 @@ import com.twinalyze.servicedemo.RestaurantsDetailsActivity
 import com.twinalyze.servicedemo.adapter.CategoryAdapter
 import com.twinalyze.servicedemo.adapter.FoodAdapter
 import com.twinalyze.servicedemo.adapter.RestaurantAdapter
+import com.twinalyze.servicedemo.ads.Admob_BannerAd
+import com.twinalyze.servicedemo.ads.Admob_InterstitialAd
 import com.twinalyze.servicedemo.model.CategoriesData
 import com.twinalyze.servicedemo.model.Food
 import com.twinalyze.servicedemo.model.FoodItem
@@ -62,6 +64,7 @@ class HomeFragment : Fragment() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -70,6 +73,10 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         try {
+
+            Admob_BannerAd().loadBanner(requireActivity(),this@HomeFragment,view.findViewById(R.id.adsContainer))
+
+
 
             badge = view.findViewById(R.id.txtCartBadge)
             txtAddress = view.findViewById(R.id.txtAddress)
@@ -102,7 +109,6 @@ class HomeFragment : Fragment() {
             recyclerFood.adapter = FoodAdapter(mutableListOf()) {
                 Toast.makeText(requireContext(), "Add success", Toast.LENGTH_SHORT).show()
             }
-
 
             val restaurants = listOf(
                 CategoriesData(
@@ -140,15 +146,34 @@ class HomeFragment : Fragment() {
                 .groupBy { norm(it.foodCategories) }
 
             val adapter = CategoryAdapter(mutableListOf()){ clickedItem ->
-                val key = norm(clickedItem.categoriesName)
-                val fullListForCategory = groupedByCategory[key].orEmpty()
-                val gson = Gson()
-                val jsonItems = gson.toJson(fullListForCategory)
-                val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
-                    putExtra("category_name", clickedItem.categoriesName)
-                    putExtra("category_items_json", jsonItems)
-                }
-                startActivity(intent)
+
+                Admob_InterstitialAd.loadInter(requireActivity(),this@HomeFragment,object : Admob_InterstitialAd.AdEvent{
+                    override fun closeOnAd() {
+
+                        Admob_InterstitialAd.show(requireActivity(),this@HomeFragment,object : Admob_InterstitialAd.AdEvent{
+                            override fun closeOnAd() {
+
+                                val key = norm(clickedItem.categoriesName)
+                                val fullListForCategory = groupedByCategory[key].orEmpty()
+                                val gson = Gson()
+                                val jsonItems = gson.toJson(fullListForCategory)
+                                val intent = Intent(requireContext(), CategoryListActivity::class.java).apply {
+                                    putExtra("category_name", clickedItem.categoriesName)
+                                    putExtra("category_items_json", jsonItems)
+                                }
+                                startActivity(intent)
+
+                            }
+                        })
+
+                    }
+                })
+
+
+
+
+
+
             }
             recyclerCategories.adapter = adapter
             adapter.setItems(restaurants)
@@ -269,6 +294,8 @@ class HomeFragment : Fragment() {
                         restaurants,
                         R.layout.item_restaurant
                     ) { restaurant ->
+
+
                         val intent =
                             Intent(requireContext(), RestaurantsDetailsActivity::class.java).apply {
                                 putExtra("restaurantName", restaurant.restaurantName)
@@ -280,6 +307,9 @@ class HomeFragment : Fragment() {
                                 putExtra("restaurantDescription", restaurant.restaurantDescription)
                             }
                         startActivity(intent)
+
+
+
                     }
                     recyclerRestaurants.adapter = restaurantAdapter
 

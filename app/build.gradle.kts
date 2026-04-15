@@ -31,7 +31,15 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isDebuggable = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -87,8 +95,13 @@ dependencies {
     implementation(libs.firebase.common)
     implementation(libs.sdp.android)
 
-    //Twinnalyze sdk implementation
-    implementation("com.twinalyze:analytics:1.+")
+    //Twinalyze sdk implementation
+    implementation("com.twinalyze:analytics:1.2.15")
+
+
+    //Admob
+    implementation("com.google.android.ump:user-messaging-platform:2.2.0")
+    implementation("com.google.android.gms:play-services-ads:24.8.0")
 
 
 }
