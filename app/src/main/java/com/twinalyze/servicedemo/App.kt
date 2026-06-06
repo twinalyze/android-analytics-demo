@@ -14,8 +14,8 @@ class App : Application() {
         super.onCreate()
 
         Twinalyze.initialize(this,
-            "6e1fa2b44a5364988627d95280e5a8992112acad8a",
-            "3d4eac131f145649063432b4e7b062254ded17e0bf530da61dd9c564f387f332",
+            "e50bd15599130493594306921558a47d2a39c754f5",
+            "496d043f2b53dfd2acc1de118f26f591a0b52a9943b6e248a817b6a5d776a184",
             object : TwinalyzeInitializationStatus {
                 override fun onSuccess() {
                     Log.d("App@@@", "onSuccess")

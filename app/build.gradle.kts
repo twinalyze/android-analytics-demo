@@ -38,7 +38,7 @@ android {
             )
         }
         debug {
-            isDebuggable = false
+            isDebuggable = true
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -95,13 +95,10 @@ dependencies {
     implementation(libs.firebase.common)
     implementation(libs.sdp.android)
 
-    //Twinalyze sdk implementation
-    implementation("com.twinalyze:analytics:1.2.15")
-
+    implementation("com.twinalyze:analytics:1.2.20")
 
     //Admob
     implementation("com.google.android.ump:user-messaging-platform:2.2.0")
     implementation("com.google.android.gms:play-services-ads:24.8.0")
-
 
 }
